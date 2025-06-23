@@ -1,0 +1,16 @@
+[
+  {
+    "id": "simple-power",
+    "title": "Simple is Power eBook",
+    "description": "A guide to minimalist success.",
+    "price": "RM29",
+    "image": "assets/product1.jpg"
+  },
+  {
+    "id": "biz-templates",
+    "title": "Business Templates Pack",
+    "description": "Ready-to-use templates for entrepreneurs.",
+    "price": "RM45",
+    "image": "assets/product2.jpg"
+  }
+]
