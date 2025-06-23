@@ -278,6 +278,7 @@ section {
 }
 
 .product-card {
+  position: relative;
   background-color: var(--surface-dark);
   border: 1px solid var(--border-color);
   border-radius: 10px;
@@ -317,6 +318,61 @@ section {
   font-weight: 700;
   color: var(--primary-color);
   margin: 0 15px 15px;
+}
+
+/* =========================== */
+/*         PRODUCT BADGES      */
+/* =========================== */
+/*.product-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.badge-new {
+  background-color: #28a745; /* green 
+}
+/*
+.badge-bestseller {
+  background-color: #ff6f00; /* orange 
+}
+/*
+.badge-limited {
+  background-color: #d32f2f; /* red 
+}
+*/
+.product-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Badge khas ikut jenis */
+.badge-new {
+  background-color: #00c853; /* Hijau */
+}
+
+.badge-bestseller {
+  background-color: #ff9800; /* Jingga */
+}
+
+.badge-limited {
+  background-color: #f44336; /* Merah */
 }
 
 /* ===================== */
@@ -800,4 +856,73 @@ section {
   .menu-toggle {
     display: block;
   }
+}
+
+/* =========================== */
+/*   PRODUCT DETAIL PAGE       */
+/* =========================== */
+
+.product-details-container {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.product-detail-card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.product-detail-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-detail-card img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.product-detail-card h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.product-detail-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: #7e2df5;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Back Button */
+.btn-secondary {
+  background-color: #111;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #333;
 }
