@@ -1,16 +1,18 @@
 [
   {
-    "id": "simple-power",
+    "id": "simple-is-power",
     "title": "Simple is Power eBook",
     "description": "A guide to minimalist success.",
     "price": "RM29",
-    "image": "assets/product1.jpg"
+    "image": "assets/product1.jpg",
+    "badge": "BestSeller"
   },
   {
-    "id": "biz-templates",
-    "title": "Business Templates Pack",
-    "description": "Ready-to-use templates for entrepreneurs.",
+    "id": "entrepreneur-trick",
+    "title": "Entrepreneur Trick",
+    "description": " Entrepreneur Tricks is a simple, no-fluff eBook filled with smart business hacks, digital tools, and mindset tips — perfect for beginners who want to start and grow fast.",
     "price": "RM45",
-    "image": "assets/product2.jpg"
+    "image": "assets/product2.jpg",
+    "badge": "New"
   }
 ]
