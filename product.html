@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* WhatsApp Button Styling */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      background-color: #25D366;
+      color: white !important;
+      border-radius: 30px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px rgba(37, 211, 102, 0.3);
+      text-decoration: none;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-btn i {
+      font-size: 1.3rem;
+    }
+
+    .product-detail-card {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-detail-card img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin: 15px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .btn-secondary {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background-color: #555;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .main-header {
+      background: #f4f4f4;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .product-details-container {
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <h1 class="logo"><a href="index.html">ANAS NIDIR E-COMMERCE</a></h1>
+    </div>
+  </header>
+
+  <main class="product-details-container">
+    <div class="container" id="productDetails">
+      <p>Loading product details...</p>
+    </div>
+    <div class="container" style="text-align: center; margin-top: 30px;">
+      <a id="whatsappBtn" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Order via WhatsApp
+      </a>
+      <br><br>
+      <a href="index.html" class="btn btn-secondary">Back to Product List</a>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("id");
+
+    fetch('products.json')
+      .then(res => res.json())
+      .then(products => {
+        const product = products.find(p => p.id === productId);
+        const container = document.getElementById("productDetails");
+
+        if (!product) {
+          container.innerHTML = "<p>Product not found.</p>";
+          return;
+        }
+
+        container.innerHTML = `
+          <div class="product-detail-card">
+            <img src="${product.image}" alt="${product.title}" />
+            <h2>${product.title}</h2>
+            <p>${product.description}</p>
+            <div class="product-price">${product.price}</div>
+          </div>
+        `;
+
+        const whatsappBtn = document.getElementById("whatsappBtn");
+        const phone = "60105112907";
+        const message = `Hi, I'm interested in purchasing the product "${product.title}" from your ANAS NIDIR E-COMMERCE site.`;
+        whatsappBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      })
+      .catch(err => {
+        document.getElementById("productDetails").innerHTML = "<p>Error loading product.</p>";
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>
